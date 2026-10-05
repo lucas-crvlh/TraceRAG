@@ -1,0 +1,10 @@
+# Contrato inicial; nenhum documento cadastrado.
+schema_version: 1
+
+# Cada entrada futura deverá conter os campos obrigatórios:
+# id: identificador textual único e não vazio.
+# title: título textual não vazio do documento.
+# source_url: URL pública de origem, como texto não vazio.
+# local_path: caminho relativo de arquivo sob data/, como texto não vazio.
+# local_path não poderá conter segmentos ".." nem apontar para data/.gitkeep.
+documents: []
