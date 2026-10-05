@@ -1,10 +1,25 @@
-# Contrato inicial; nenhum documento cadastrado.
-schema_version: 1
+# Contrato documental; nenhum documento cadastrado.
+schema_version: 2
 
 # Cada entrada futura deverá conter os campos obrigatórios:
 # id: identificador textual único e não vazio.
 # title: título textual não vazio do documento.
 # source_url: URL pública de origem, como texto não vazio.
-# local_path: caminho relativo de arquivo sob data/, como texto não vazio.
-# local_path não poderá conter segmentos ".." nem apontar para data/.gitkeep.
+# local_path: caminho textual não vazio, relativo à raiz do repositório.
+# Deve começar por "data/", usar "/" como separador e identificar um arquivo.
+# Não aceitar caminho absoluto, prefixo de unidade, barra invertida,
+# segmentos vazios, "." ou "..", barra final nem o caminho "data/.gitkeep".
+# Ao acessar o arquivo, o caminho resolvido deverá permanecer dentro de data/,
+# inclusive quando houver links simbólicos ou junções no sistema de arquivos.
+# usage_review: objeto obrigatório com todos os campos abaixo:
+#   reviewed_on: data válida como texto "YYYY-MM-DD", da análise realizada.
+#   evidence_urls: lista não vazia de URLs públicas das condições consultadas.
+#   intended_use: texto não vazio que descreve o uso pretendido no projeto.
+#   decision: texto "approved", após análise favorável para o uso pretendido.
+#   notes: texto não vazio com condições identificadas, fundamento da decisão,
+#     requisitos de atribuição e restrições aplicáveis ao uso pretendido.
+# Não cadastrar a entrada nem incorporar o documento ao corpus antes da análise
+# aprovada. Condições incertas ou incompatíveis impedem o cadastro e a inclusão.
+# Disponibilidade pública, por si só, não constitui aprovação de uso.
+# Este contrato documenta requisitos; não há validador automático implementado.
 documents: []
