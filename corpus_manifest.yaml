@@ -1,7 +1,8 @@
-# Contrato documental; nenhum documento cadastrado.
+# Contrato documental do corpus, com três seções da NIST TN 1297 cadastradas
+# para o piloto M004.
 schema_version: 2
 
-# Cada entrada futura deverá conter os campos obrigatórios:
+# Cada entrada deve conter os campos obrigatórios:
 # id: identificador textual único e não vazio.
 # title: título textual não vazio do documento.
 # source_url: URL pública de origem, como texto não vazio.
@@ -12,7 +13,7 @@ schema_version: 2
 # Ao acessar o arquivo, o caminho resolvido deverá permanecer dentro de data/,
 # inclusive quando houver links simbólicos ou junções no sistema de arquivos.
 # usage_review: objeto obrigatório com todos os campos abaixo:
-#   reviewed_on: data válida como texto "YYYY-MM-DD", da análise realizada.
+#   reviewed_on: data válida como texto "YYYY-MM-DD", entre aspas, da análise realizada.
 #   evidence_urls: lista não vazia de URLs públicas das condições consultadas.
 #   intended_use: texto não vazio que descreve o uso pretendido no projeto.
 #   decision: texto "approved", após análise favorável para o uso pretendido.
@@ -21,5 +22,99 @@ schema_version: 2
 # Não cadastrar a entrada nem incorporar o documento ao corpus antes da análise
 # aprovada. Condições incertas ou incompatíveis impedem o cadastro e a inclusão.
 # Disponibilidade pública, por si só, não constitui aprovação de uso.
-# Este contrato documenta requisitos; não há validador automático implementado.
-documents: []
+# O piloto M004 aplica estas regras na ingestão (src/tracerag/corpus.py), com
+# yaml.safe_load e validação mínima de campos e tipos; não é um validador geral.
+documents:
+  - id: tn1297-s2
+    title: "NIST TN 1297: 2. Classification of Components of Uncertainty"
+    source_url: https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-2-classification-components-uncertainty
+    local_path: data/m004/raw/tn1297-s2.html
+    usage_review:
+      reviewed_on: "2026-10-06"
+      evidence_urls:
+        - https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications
+        - https://www.nist.gov/pml/nist-technical-note-1297
+      intended_use: >-
+        Estudo e experimento local de extração, indexação e consulta lexical do texto
+        desta seção, com atribuição e rastreabilidade; snapshot e derivados ficam fora
+        do Git, sem redistribuição nesta missão.
+      decision: approved
+      notes: >-
+        Seção web da NIST Technical Note 1297, "Guidelines for Evaluating and Expressing
+        the Uncertainty of NIST Measurement Results" (B. N. Taylor e C. E. Kuyatt, edição
+        de 1994), publicada em nist.gov como adaptação da Technical Note. Condições
+        (política oficial para NIST Technical Series Publications, lida em 2026-10-06):
+        obras de servidores do NIST não têm proteção de copyright nos EUA e os direitos
+        estrangeiros são reservados; na medida em que o NIST os detenha, o público recebe
+        direito mundial, não exclusivo e gratuito de reproduzir em qualquer formato e de
+        criar obras derivadas; obras de terceiros publicadas pelo NIST podem ter proteção.
+        Fundamento: texto de autores do NIST, sem marcação de material de terceiros nesta
+        seção; o uso local proposto está coberto. Atribuição: citação recomendada (autores,
+        ano da edição, título, NIST, URL e data de acesso) seguida de "Republished courtesy
+        of the National Institute of Standards and Technology.", registrada por snapshot.
+        Restrições: uso local de estudo; sem redistribuição nem endosso do NIST; não usar
+        como norma ou decisão técnica automática; a proximidade textual com o GUM não cria
+        licença do GUM/ISO; a decisão não se estende a PDFs, outras fontes ou outros órgãos
+        e não define a licença do projeto.
+  - id: tn1297-s3
+    title: "NIST TN 1297: 3. Type A Evaluation of Standard Uncertainty"
+    source_url: https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-3-type-evaluation-standard-uncertainty
+    local_path: data/m004/raw/tn1297-s3.html
+    usage_review:
+      reviewed_on: "2026-10-06"
+      evidence_urls:
+        - https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications
+        - https://www.nist.gov/pml/nist-technical-note-1297
+      intended_use: >-
+        Estudo e experimento local de extração, indexação e consulta lexical do texto
+        desta seção, com atribuição e rastreabilidade; snapshot e derivados ficam fora
+        do Git, sem redistribuição nesta missão.
+      decision: approved
+      notes: >-
+        Seção web da NIST Technical Note 1297, "Guidelines for Evaluating and Expressing
+        the Uncertainty of NIST Measurement Results" (B. N. Taylor e C. E. Kuyatt, edição
+        de 1994), publicada em nist.gov como adaptação da Technical Note. Condições
+        (política oficial para NIST Technical Series Publications, lida em 2026-10-06):
+        obras de servidores do NIST não têm proteção de copyright nos EUA e os direitos
+        estrangeiros são reservados; na medida em que o NIST os detenha, o público recebe
+        direito mundial, não exclusivo e gratuito de reproduzir em qualquer formato e de
+        criar obras derivadas; obras de terceiros publicadas pelo NIST podem ter proteção.
+        Fundamento: texto de autores do NIST, sem marcação de material de terceiros nesta
+        seção; o uso local proposto está coberto. Atribuição: citação recomendada (autores,
+        ano da edição, título, NIST, URL e data de acesso) seguida de "Republished courtesy
+        of the National Institute of Standards and Technology.", registrada por snapshot.
+        Restrições: uso local de estudo; sem redistribuição nem endosso do NIST; não usar
+        como norma ou decisão técnica automática; a proximidade textual com o GUM não cria
+        licença do GUM/ISO; a decisão não se estende a PDFs, outras fontes ou outros órgãos
+        e não define a licença do projeto.
+  - id: tn1297-s4
+    title: "NIST TN 1297: 4. Type B Evaluation of Standard Uncertainty"
+    source_url: https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-4-type-b-evaluation-standard-uncertainty
+    local_path: data/m004/raw/tn1297-s4.html
+    usage_review:
+      reviewed_on: "2026-10-06"
+      evidence_urls:
+        - https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications
+        - https://www.nist.gov/pml/nist-technical-note-1297
+      intended_use: >-
+        Estudo e experimento local de extração, indexação e consulta lexical do texto
+        desta seção, com atribuição e rastreabilidade; snapshot e derivados ficam fora
+        do Git, sem redistribuição nesta missão.
+      decision: approved
+      notes: >-
+        Seção web da NIST Technical Note 1297, "Guidelines for Evaluating and Expressing
+        the Uncertainty of NIST Measurement Results" (B. N. Taylor e C. E. Kuyatt, edição
+        de 1994), publicada em nist.gov como adaptação da Technical Note. Condições
+        (política oficial para NIST Technical Series Publications, lida em 2026-10-06):
+        obras de servidores do NIST não têm proteção de copyright nos EUA e os direitos
+        estrangeiros são reservados; na medida em que o NIST os detenha, o público recebe
+        direito mundial, não exclusivo e gratuito de reproduzir em qualquer formato e de
+        criar obras derivadas; obras de terceiros publicadas pelo NIST podem ter proteção.
+        Fundamento: texto de autores do NIST, sem marcação de material de terceiros nesta
+        seção; o uso local proposto está coberto. Atribuição: citação recomendada (autores,
+        ano da edição, título, NIST, URL e data de acesso) seguida de "Republished courtesy
+        of the National Institute of Standards and Technology.", registrada por snapshot.
+        Restrições: uso local de estudo; sem redistribuição nem endosso do NIST; não usar
+        como norma ou decisão técnica automática; a proximidade textual com o GUM não cria
+        licença do GUM/ISO; a decisão não se estende a PDFs, outras fontes ou outros órgãos
+        e não define a licença do projeto.
